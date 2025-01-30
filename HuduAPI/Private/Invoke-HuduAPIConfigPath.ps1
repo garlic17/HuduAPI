@@ -1,5 +1,5 @@
 function Invoke-HuduAPIConfigPath {
-    $ModuleConfigPath = "~/RDF/HuduApiV1"
+    $ModuleConfigPath = "~/HuduApiV1"
     $ModuleConfigFile = "config.psd1"
 
     Set-variable -name ModuleConfigPath -value $ModuleConfigPath -option ReadOnly -Scope Script
