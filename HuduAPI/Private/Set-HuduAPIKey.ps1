@@ -14,7 +14,7 @@ function Set-HuduAPIKey {
         Set-Variable -Name HuduAPIKey -Value $tmp_api_key -Option ReadOnly -Scope Script -Force
     }
     
-    if ($HuduAPIKey -and $HuduAPIUrl) {
+    if ($HuduAPIKey -and $HuduAPIUri) {
         Export-HuduAPIModuleSettings        
     }
 }

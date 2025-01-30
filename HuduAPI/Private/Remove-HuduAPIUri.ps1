@@ -1,3 +1,3 @@
 function Remove-HuduAPIUri {
-    Remove-Variable -Name HuduAPIUrl -Scope Script -Force
+    Remove-Variable -Name HuduAPIUri -Scope Script -Force
 }

@@ -1,13 +1,13 @@
 function Export-HuduAPIModuleConfig {
     $ModuleConfig = Join-Path -Path $ModuleConfigPath -ChildPath $ModuleConfigFile
-    if ($HuduAPIKey -and $HuduAPIUrl) {
+    if ($HuduAPIKey -and $HuduAPIUri) {
         $secureString = $HuduAPIKey | ConvertFrom-SecureString
         
         New-Item -ItemType Directory -Path $ModuleConfigPath -Force | Out-Null
 
         $ModuleConfigData = @{
             HuduAPIKey = $secureString
-            HuduAPIUrl = $HuduAPIUrl
+            HuduAPIUri = $HuduAPIUri
         }
         $ModuleConfigData |Out-File -FilePath $ModuleConfig -Force
     } else {

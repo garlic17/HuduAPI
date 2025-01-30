@@ -5,6 +5,6 @@ function Import-HuduAPIModuleConfig {
     } else {
         Write-Host "No module config file found at $($ModuleConfig)." -ForegroundColor Yellow
         Write-Host "Please execute Set-HuduAPIKey to set your API key." -ForegroundColor Yellow
-        Write-Host "Please execute Set-HuduAPIUrl to set your API URL." -ForegroundColor Yellow        
+        Write-Host "Please execute Set-HuduAPIUri to set your API URL." -ForegroundColor Yellow        
     }
 }

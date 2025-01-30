@@ -16,7 +16,7 @@ function Get-HuduAPICall {
     }
 
     process {
-        $uri = "$($HuduAPIUrl)$($uriStem)"
+        $uri = "$($HuduAPIUri)$($uriStem)"
         Write-Host "GET - $($uriStem)"
 
         try {
