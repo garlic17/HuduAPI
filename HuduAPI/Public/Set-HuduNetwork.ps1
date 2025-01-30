@@ -24,6 +24,9 @@ function Set-HuduNetwork {
     .PARAMETER LocationId
     The location ID of the network.
 
+    .PARAMETER ParentNetworkId
+    Network parent id
+
     #>
     [CmdletBinding(SupportsShouldProcess)]
     Param (
@@ -43,6 +46,9 @@ function Set-HuduNetwork {
         [Alias("location_id")]
         [int]$LocationId,
 
+        [Alias('parent_network_id')]
+        [Int]$ParentNetworkId = '',
+
         [string]$Description
 
 
@@ -54,6 +60,7 @@ function Set-HuduNetwork {
     if ($NetworkType) { $Network.network.add("network_type", $NetworkType) }
     if ($CompanyId) { $Network.network.add("company_id", $CompanyId) }
     if ($LocationId) { $Network.network.add("location_id", $LocationId) }
+    if ($ParentNetworkId) { $Network.network.add('parent_network_id', $ParentNetworkId) }
     if ($Description) { $Network.network.add("description", $Description) }
 
     $JSON = $Network | ConvertTo-Json -Depth 10

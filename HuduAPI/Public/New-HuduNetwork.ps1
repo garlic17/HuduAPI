@@ -21,6 +21,9 @@ function New-HuduNetwork {
     .PARAMETER LocationId
     The location ID of the network.
 
+    .PARAMETER ParentNetworkId
+    Parent Network ID
+
     .EXAMPLE
     New-HuduNetwork -Address "10.255.255.0/24" -CompanyId 1
 
@@ -46,8 +49,11 @@ function New-HuduNetwork {
         [string]$Description,
 
         [Alias("location_id")]
-        [int]
-        $LocationId
+        [int]$LocationId,
+
+        [Alias('parent_network_id')]
+        [Int]$ParentNetworkId = ''
+
 
     )
 
@@ -60,6 +66,7 @@ function New-HuduNetwork {
     if ($Name) { $Network.network.add("name", $Name) }    
     if ($Description) { $Network.network.add("description", $Description) }
     if ($LocationId) { $Network.network.add("location_id", $LocationId) }
+    if ($ParentNetworkId) { $Network.network.add('parent_network_id', $ParentNetworkId) }
 
     $JSON = $Network | ConvertTo-Json -Depth 10
 
